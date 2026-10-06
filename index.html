@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vladan Mitic | Lead AI Automation Engineer</title>
-<meta name="description" content="AI-powered workflows that monitor third-party sources, validate signals against the ICP, and route actionable intelligence to sales teams.">
+<meta name="description" content="Production n8n systems that read the market every week, verify every signal in code, and hand sales leaders new leads with the CRM context already attached.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@
     max-width: 900px; margin-bottom: 30px;
   }
   h1 .hl { color: var(--accent); }
-  .sub { color: var(--muted); font-size: 18px; max-width: 620px; margin-bottom: 44px; }
+  .sub { color: var(--muted); font-size: 18px; max-width: 640px; margin-bottom: 44px; }
   .cta { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn {
     font-family: var(--mono); font-size: 13px; letter-spacing: .14em;
@@ -99,6 +99,7 @@
   .sec-label { font-family: var(--mono); font-size: 13px; letter-spacing: .22em; color: var(--accent); margin-bottom: 52px; }
   .sec-label::after { content: ''; display: block; width: 0; height: 2px; background: var(--accent); margin-top: 10px; transition: width .8s ease .25s; }
   .sec-label.in::after { width: 64px; }
+  .lead { color: var(--muted); font-size: 15.5px; max-width: 840px; margin-top: -30px; margin-bottom: 46px; }
 
   /* ---------- work cards ---------- */
   .card {
@@ -141,13 +142,6 @@
   .approach-card h4 { font-family: var(--mono); font-size: 18px; margin-bottom: 12px; }
   .approach-card p { color: var(--muted); font-size: 14.5px; }
 
-  /* ---------- contact ---------- */
-  .contact-line { display: flex; gap: 14px; align-items: baseline; margin-bottom: 14px; font-family: var(--mono); font-size: 14px; }
-  .contact-line .k { color: var(--accent); letter-spacing: .15em; font-size: 12px; min-width: 90px; }
-  .contact-line a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); transition: all .2s; }
-  .contact-line a:hover { color: var(--accent); border-color: var(--accent); }
-  .contact-note { color: var(--dim); font-size: 14px; margin-top: 26px; max-width: 560px; }
-
   footer { border-top: 1px solid var(--border-soft); padding: 36px 0; text-align: center; }
   footer p { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--dim); }
 
@@ -164,6 +158,7 @@
     .metrics { grid-template-columns: 1fr; gap: 18px; }
     .card { padding: 28px; }
     .hero { padding: 70px 0 60px; }
+    .lead { margin-top: -26px; }
   }
 </style>
 </head>
@@ -176,7 +171,6 @@
       <a href="#work">WORK</a>
       <a href="#stack">STACK</a>
       <a href="#approach">APPROACH</a>
-      <a href="#contact">CONTACT</a>
     </nav>
   </div>
 </header>
@@ -186,10 +180,10 @@
     <span class="dot"></span>
     <div class="label">// LEAD AI AUTOMATION ENGINEER</div>
     <h1>I build systems that turn <span class="hl">market signals</span> into revenue.</h1>
-    <p class="sub">AI-powered workflows that continuously monitor third-party sources, validate signals against the ICP, and route actionable intelligence to sales teams. Running in production at GoGlobal.</p>
+    <p class="sub">Weekly n8n systems that read newswires, job postings and market feeds, verify every signal in code, and hand sales leaders new leads with the CRM context already attached. Built and run solo at GoGlobal.</p>
     <div class="cta">
-      <a class="btn btn-solid" href="#contact">GET IN TOUCH</a>
-      <a class="btn btn-ghost" href="#work">SEE THE WORK</a>
+      <a class="btn btn-solid" href="#work">SEE THE WORK</a>
+      <a class="btn btn-ghost" href="#approach">APPROACH &amp; TRADE-OFFS</a>
     </div>
   </section>
 
@@ -210,6 +204,7 @@
 
   <section id="work">
     <div class="sec-label reveal">// SELECTED WORK</div>
+    <p class="lead reveal">Two weekly systems running in production at GoGlobal. The users are the CRO, the revenue director and the regional sales directors, plus the reps working their lists. Everything is internal and nothing ever contacts a prospect.</p>
 
     <div class="card reveal">
       <div class="card-head">
@@ -217,12 +212,12 @@
         <div class="tags"><span class="tag">N8N</span><span class="tag">CLAUDE AI</span><span class="tag">APOLLO</span><span class="tag">HUBSPOT</span></div>
       </div>
       <p class="card-sub">Hiring signal detection and cross-border expansion targeting</p>
-      <p class="card-desc">An agentic workflow that detects companies hiring outside their home country, a strong signal they need international expansion support. The system partitions Apollo searches by HQ country, filters for cross-border job postings, dedupes against HubSpot and a 90-day cooldown ledger, and delivers enriched leads with AI-drafted outreach emails to sales leaders.</p>
+      <p class="card-desc">An agentic workflow that spots companies hiring outside their home country, a strong signal they need help employing people across borders. It partitions Apollo searches by HQ country, keeps only cross-border job postings, dedupes against HubSpot and a 90-day cooldown ledger, and delivers enriched leads with AI-drafted outreach to sales leaders every Monday.</p>
       <ul class="points">
         <li>Partitioned search guarantees every result is hiring outside its HQ country, so domestic hiring never produces a false positive</li>
-        <li>Multi-layer dedupe: company name before enrichment, domain after enrichment, email at contact level, plus a 90-day cooldown ledger</li>
-        <li>Claude drafts outreach emails under a strict style contract, then a code-side scrub catches AI-sounding phrasing and flags drafts with [CHECK] tags</li>
-        <li>Read-only HubSpot integration builds trust. Everything lands in an internal review digest and nothing is sent to prospects automatically</li>
+        <li>Four dedupe layers: company name before enrichment, domain after enrichment, email at contact level, plus a 90-day cooldown ledger on SharePoint</li>
+        <li>Claude drafts each outreach email under a strict style contract, then a code-side scrub catches AI-sounding phrasing and flags the draft with a [CHECK] tag instead of hiding it</li>
+        <li>HubSpot stays read-only and nothing reaches a prospect automatically. Sales leaders get a review digest and decide every outreach</li>
       </ul>
       <div class="metrics">
         <div><div class="metric-value count" data-target="367">367</div><div class="metric-label">Leads in 6 weeks</div></div>
@@ -237,13 +232,13 @@
         <div class="tags"><span class="tag">N8N</span><span class="tag">CLAUDE AI</span><span class="tag">SHAREPOINT</span><span class="tag">HUBSPOT</span></div>
       </div>
       <p class="card-sub">Competitive intelligence and trigger event routing</p>
-      <p class="card-desc">A continuous intelligence engine that scrubs 44 RSS feeds and news sources weekly for trigger events such as funding rounds, M&amp;A, international expansion and leadership changes that match the ICP. Events are validated against Apollo enrichment data, checked against HubSpot for existing relationships and warm intro paths, and delivered as regional HTML digests with Word attachments.</p>
+      <p class="card-desc">A continuous intelligence engine that reads 44 sources every week for trigger events like funding rounds, M&amp;A, international expansion and leadership changes, then matches them against the 19 ICP rows owned by the CRO and marketing. Events are verified against Apollo enrichment, checked against HubSpot for existing relationships and warm intro paths, and delivered as regional digests with Word attachments.</p>
       <ul class="points">
         <li>44 fetches per run: 23 publisher RSS seeds plus 21 Google News queries with regional locales, all fail-soft so one dead feed never kills the run</li>
-        <li>Code-level pre-filtering before any LLM call saves tokens and keeps noise out of the model context. The JSON contract is validated in code, not trusted</li>
-        <li>Apollo enrichment is the authority on headcount and HQ. A second code pass re-checks ICP matches with size tolerance bands and jurisdiction aliasing</li>
-        <li>SharePoint JSON ledger tracks every surfaced event with a 60-day cooldown. Fail-closed reads guarantee no duplicate signals reach sales</li>
-        <li>HubSpot metadata-only reads surface the line reps care about: who owns the account, when you last spoke, and who can make the intro</li>
+        <li>Code filters noise before any LLM call, and the JSON contract is validated in code after it. No source URL means the event never exists</li>
+        <li>Apollo enrichment is the authority on headcount and HQ. A second code pass re-checks the ICP match with size tolerance bands and jurisdiction aliasing</li>
+        <li>A SharePoint ledger tracks every surfaced event with a 60-day cooldown and fails closed on read errors, so duplicates can never reach sales</li>
+        <li>HubSpot metadata-only reads produce the line reps actually use: who owns the account, when you last spoke, and who can make the intro</li>
       </ul>
       <div class="metrics">
         <div><div class="metric-value count" data-target="174">174</div><div class="metric-label">Leads in 25 days</div></div>
@@ -262,7 +257,7 @@
       </div>
       <div class="stack-card">
         <h4>AI &amp; Models</h4>
-        <p>Claude (Anthropic)<br>Strict JSON contracts<br>Web search tools with usage caps<br>Deterministic code validation</p>
+        <p>Claude (Anthropic Sonnet)<br>Strict JSON contracts<br>Web search with usage caps<br>Deterministic code validation</p>
       </div>
       <div class="stack-card">
         <h4>Data Sources</h4>
@@ -277,11 +272,12 @@
 
   <section id="approach">
     <div class="sec-label reveal">// APPROACH &amp; TRADE-OFFS</div>
+    <p class="lead reveal">Sole builder on both systems. I scoped the ICP rules with the CRO and marketing, agreed the security boundaries with our security director, and owned everything else end to end. Both workflows shipped inside 12 working days, including a few lost to waiting on API keys.</p>
     <div class="approach-grid reveal">
       <div class="approach-card">
         <span class="approach-num">01</span>
         <h4>Build vs buy</h4>
-        <p>I built custom agentic workflows instead of buying an intent-data platform. The vendors sell generic signals and charge per seat. None of them understood an ICP defined by cross-border movement, and none of them could join the signal to our own CRM context.</p>
+        <p>I built custom agentic workflows instead of buying an intent-data platform. The vendors sell generic signals and charge per seat. None of them understood an ICP defined by cross-border movement, and none of them could join a signal to our own CRM context.</p>
       </div>
       <div class="approach-card">
         <span class="approach-num">02</span>
@@ -291,17 +287,8 @@
       <div class="approach-card">
         <span class="approach-num">03</span>
         <h4>Trust vs automation</h4>
-        <p>The CRM stays read-only and nothing ever reaches a prospect without a human rewrite. Digests and tracking workbooks built trust with sales leaders first. Automated writes are a later step, earned by conversion data, not assumed on day one.</p>
+        <p>The CRM stays read-only and nothing reaches a prospect without a human rewrite. Digests and tracking workbooks built trust with sales leaders first. Automated CRM writes come later, earned by conversion data, not assumed on day one.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="sec-label reveal">// GET IN TOUCH</div>
-    <div class="reveal">
-      <div class="contact-line"><span class="k">EMAIL</span><a href="mailto:buzzvladan@gmail.com">buzzvladan@gmail.com</a></div>
-      <div class="contact-line"><span class="k">LINKEDIN</span><a href="https://linkedin.com/in/vladan-mitic" target="_blank" rel="noopener">linkedin.com/in/vladan-mitic</a></div>
-      <p class="contact-note">Lead Automation Consultant at GoGlobal. Happy to walk through live workflow exports, ledger design, or the numbers behind either system.</p>
     </div>
   </section>
 </div>
