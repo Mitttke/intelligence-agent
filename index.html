@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vladan Mitic - AI Automation Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #a3a3a3;
+            margin-bottom: 48px;
+            max-width: 600px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #888;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .section-number {
+            font-size: 13px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        /* Project Cards */
+        .project {
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 24px;
+            transition: border-color 0.2s;
+        }
+
+        .project:hover {
+            border-color: #404040;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .project-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .project-subtitle {
+            font-size: 16px;
+            color: #888;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag-pill {
+            background: #1f1f1f;
+            border: 1px solid #333;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #ccc;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #a3a3a3;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .project-highlights {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .project-highlights li {
+            padding: 12px 0;
+            border-bottom: 1px solid #262626;
+            color: #d4d4d4;
+            font-size: 15px;
+        }
+
+        .project-highlights li:last-child {
+            border-bottom: none;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #262626;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Stack */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .stack-card {
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .stack-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stack-items {
+            color: #a3a3a3;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #262626;
+            padding: 48px 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .stats {
+                gap: 32px;
+            }
+
+            .project {
+                padding: 24px;
+            }
+
+            .project-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="tag">Lead AI Automation Engineer</div>
+            <h1>Building systems that<br>turn market signals<br>into revenue.</h1>
+            <p class="subtitle">I architect AI-powered workflows that continuously monitor third-party sources, validate signals against your ICP, and route actionable intelligence to sales teams.</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-value">541</span>
+                    <span class="stat-label">Leads Generated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">$7.3M</span>
+                    <span class="stat-label">Pipeline Created</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">15h+</span>
+                    <span class="stat-label">Saved Per Rep/Week</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>Selected Work</h2>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Apollo Lead Gen Pipeline</h3>
+                        <p class="project-subtitle">Hiring Signal Detection & Cross-Border Expansion Targeting</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag-pill">n8n</span>
+                        <span class="tag-pill">Claude AI</span>
+                        <span class="tag-pill">Apollo</span>
+                        <span class="tag-pill">HubSpot</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    An agentic workflow that detects companies hiring outside their home country—a strong signal they need international expansion support. The system partitions Apollo searches by HQ country, filters for cross-border job postings, dedupes against HubSpot and a 90-day cooldown ledger, and delivers enriched leads with AI-drafted outreach emails to sales leaders.
+                </p>
+                <ul class="project-highlights">
+                    <li>Partitioned search guarantees every result is hiring outside its HQ country—no false positives from domestic hiring</li>
+                    <li>Multi-layer dedupe: company name (pre-enrichment), domain (post-enrichment), email (contact-level), plus 90-day cooldown ledger</li>
+                    <li>Claude drafts outreach emails with strict style contracts; code-side scrub catches AI-sounding phrases and flags drafts with [CHECK] tags</li>
+                    <li>Read-only HubSpot integration builds trust; everything delivered via internal review digest, nothing sent to prospects automatically</li>
+                </ul>
+                <div class="project-metrics">
+                    <div class="metric">
+                        <span class="metric-value">367</span>
+                        <span class="metric-label">Leads in 6 weeks</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">29</span>
+                        <span class="metric-label">Conversions</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">$4.6M</span>
+                        <span class="metric-label">Pipeline Generated</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">ICP Market Movements</h3>
+                        <p class="project-subtitle">Competitive Intelligence & Trigger Event Routing</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag-pill">n8n</span>
+                        <span class="tag-pill">Claude AI</span>
+                        <span class="tag-pill">SharePoint</span>
+                        <span class="tag-pill">HubSpot</span>
+                    </div>
+                </div>
+                <p class="project-description">
+                    A continuous intelligence engine that scrubs 44 RSS feeds and news sources weekly for trigger events (funding rounds, M&A, international expansion, leadership changes) that match our ICP. Events are validated against Apollo enrichment data, checked against HubSpot for existing relationships and warm intro paths, and delivered as regional HTML digests with Word attachments.
+                </p>
+                <ul class="project-highlights">
+                    <li>44 concurrent fetches per run (23 publisher RSS + 21 Google News queries with regional locales) with fail-soft degradation</li>
+                    <li>Code-level pre-filtering before LLM calls saves tokens and prevents noise from reaching Claude; strict JSON schema validated in code</li>
+                    <li>Apollo enrichment is authoritative for headcount/HQ; code re-checks ICP matches against facts with size tolerance bands and jurisdiction aliasing</li>
+                    <li>SharePoint JSON ledger tracks every surfaced event with 60-day cooldown; fail-closed reads guarantee no duplicate signals reach sales</li>
+                    <li>HubSpot metadata-only reads surface relationship context: "owner is X, last meeting in March" or "warm path: ask Y for intro"</li>
+                </ul>
+                <div class="project-metrics">
+                    <div class="metric">
+                        <span class="metric-value">174</span>
+                        <span class="metric-label">Leads in 25 days</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">18</span>
+                        <span class="metric-label">Conversions</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">$2.7M</span>
+                        <span class="metric-label">Pipeline Generated</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack Section -->
+        <section id="stack">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>Architecture & Stack</h2>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <div class="stack-title">Orchestration</div>
+                    <div class="stack-items">
+                        n8n (self-hosted)<br>
+                        Multi-step agentic workflows<br>
+                        Batch processing & throttling<br>
+                        Error handling & retries
+                    </div>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">AI & Models</div>
+                    <div class="stack-items">
+                        Claude (Anthropic)<br>
+                        Strict JSON contracts<br>
+                        Web search tools<br>
+                        Deterministic code validation
+                    </div>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">Data Sources</div>
+                    <div class="stack-items">
+                        Apollo (enrichment & search)<br>
+                        HubSpot (CRM metadata)<br>
+                        SharePoint (state ledger)<br>
+                        RSS feeds & Google News
+                    </div>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">Design Patterns</div>
+                    <div class="stack-items">
+                        Fail-soft reads, fail-closed state<br>
+                        Write-before-send ordering<br>
+                        Idempotent PUTs vs retry-2 sends<br>
+                        Config nodes with $vars overrides
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section>
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Approach</h2>
+            </div>
+            <div class="project">
+                <p class="project-description" style="margin-bottom: 24px;">
+                    <strong style="color: #fff;">Build vs Buy:</strong> I chose to build custom agentic workflows over buying enterprise intent-data platforms to maintain strict control over proprietary ICP logic, avoid per-seat licensing bloat, and integrate deeply with our specific Apollo/HubSpot stack.
+                </p>
+                <p class="project-description" style="margin-bottom: 24px;">
+                    <strong style="color: #fff;">LLM vs Deterministic Code:</strong> I use deterministic code for 90% of the pipeline (noise filtering, deduplication, date-window validation, size-band math) to save API costs and prevent hallucinations. The LLM is reserved strictly for semantic ICP matching and summarization.
+                </p>
+                <p class="project-description">
+                    <strong style="color: #fff;">Trust vs Automation:</strong> I chose a "read-only" CRM approach initially. Instead of letting the AI auto-create HubSpot records (which risks polluting the CRM with unvetted data), the system generates rich, context-heavy digests and tracking workbooks. This built trust with sales leaders before we considered automated CRM writes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Vladan Mitic · Lead Automation Consultant · 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
